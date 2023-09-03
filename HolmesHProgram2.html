@@ -4,62 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Wizards Workshop Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1> Weather Wizards Workshops</h1>
-<p>We host Weather Wizards Workshops throughout the year for kids from 6-12.</p>
-<p>Please note that the following workshops are free to members:</p>
-<ul>
-    <li>Make a Rain Gauge</li>
-    <li>Make a Thermometer</li>
-</ul>
+<!-- 
+HolmesHProgram2.html
+Created 29 Aug 2023
+Created by Hannah Holmes
+This file holds the HTML form for my CPT 283 PHP class assignment 2
+-->
 
-<form action="handle_form.php" method="post"></form>
-    <fieldset>
-        <legend>Register Your Interests</legend>
-        <input type="checkbox" id="rain" name="rain" value="rain">
-        <label for="rain">Make a Rain Gauge</label><br>
-        <input type="checkbox" id="thermometer" name="thermometer" value="thermometer">
-        <label for="thermometer"></label>Make a Thermometer</label><br>
-        <input type="checkbox" id="windsock" name="windsock" value="windsock">
-        <label for="windsock"></label>Make a Windsock</label><br>
-        <input type="checkbox" id="lightning" name="lightning" value="lightning">
-        <label for="lightning"></label>Make Lightning in Your Mouth</label><br>
-        <input type="checkbox" id="hygrometer" name="hygrometer" value="hygrometer">
-        <label for="hygrometer"></label>Make a Hygrometer</label><br><br>
+<div class="content">
+    <div class="formcontent">
+        <h1 class="text">Weather Wizards Workshops</h1>
+        <p class="text">We host Weather Wizards Workshops throughout the year for kids from 6-12.</p>
+        <p class="text">Please note that the following workshops are free to members:</p>
+        <ul>
+            <li>Make a Rain Gauge</li>
+            <li>Make a Thermometer</li>
+        </ul>
 
-        <label for="name">Your name:</label><br>
-        <input type="text"><br><br>
+        <form action="checkform.php" method="post">
+            <fieldset>
+                <legend>Register Your Interests</legend>
+                <input type="checkbox" id="rain" name="workshop[]" value="Make a Rain Gauge">
+                <label for="rain">Make a Rain Gauge</label><br>
+                <input type="checkbox" id="thermometer" name="workshop[]" value="Make a Thermometer">
+                <label for="thermometer"></label>Make a Thermometer</label><br>
+                <input type="checkbox" id="windsock" name="workshop[]" value="Make a Windsock">
+                <label for="windsock"></label>Make a Windsock</label><br>
+                <input type="checkbox" id="lightning" name="workshop[]" value="Make Lightning in Your Mouth">
+                <label for="lightning"></label>Make Lightning in Your Mouth</label><br>
+                <input type="checkbox" id="hygrometer" name="workshop[]" value="Make a Hygrometer">
+                <label for="hygrometer"></label>Make a Hygrometer</label><br><br>
 
-        <label for="parent">Your parent or guardian's name:</label><br>
-        <input type="text"><br><br>
+                <label for="childname" >Your name:</label>
+                <input type="text" name ="childName"><br><br>
 
-        <label for="email">Your parent or guardian's email:</label><br>
-        <input type="text"><br><br>
+                <label for="parent">Your parent or guardian's name:</label>
+                <input type="text" name="parentName"><br><br>
 
-        <label for="phone">Your parent or guardian's phone:</label><br>
-        <input type="text"><br><br>
+                <label for="email">Your parent or guardian's email:</label>
+                <input type="text" name="email"><br><br>
 
-        <label for="center">Your closest center:</label>
-        <select id="center" name="center">
-            <option value="charleston">Charleston</option>
-            <option value="summerville">Summerville</option>
-            <option value="mtpleasant">Mt. Pleasant</option>
-        </select><br><br>
+                <label for="phone">Your parent or guardian's phone:</label>
+                <input type="text" name="phone"><br><br>
 
-        Are you a member?
-        <input type="radio" id="yes" name="membership">
-        <label for="yes">Yes</label>
+                <label for="center">Your closest center:</label>
+                <select id="center" name="center">
+                    <option value="selectOne" selected>Select One</option>
+                    <option value="charleston">Charleston</option>
+                    <option value="summerville">Summerville</option>
+                    <option value="mtpleasant">Mt. Pleasant</option>
+                </select><br><br>
 
-        <input type="radio" id="no" name="membership">
-        <label for="no">No</label>
+                <p id="membership">Are you a member?
+                <input type="radio" id="yes" name="membershipStatus" value="yes">
+                <label for="yes">Yes</label>
 
-        <input type="radio" id="signup" name="membership">
-        <label for="signup">Sign me up</label><br><br>
+                <input type="radio" id="no" name="membershipStatus" value="no">
+                <label for="no">No</label>
 
-        <input type="submit">
-        <input type="reset">
-    </fieldset>
-</form>
+                <input type="radio" id="signup" name="membershipStatus" value="signup">
+                <label for="signup">Sign me up</label><br><br>
+                </p>
+
+            </fieldset>
+            <div class="end">
+                <input type="submit" name="submit" value="Submit My Information">
+                <input type="reset">
+            </div>
+        </form>
+    </div>
+
+   
+           
+            <div class="imagecontent">
+                <img class="pics" id="thermo" src="thermometer.jpg">
+                <img class="pics" id="windsock" src="windsock.jpg">
+            </div>
+    
+    
+</div>
+
+<footer>
+    <p class="imgcredit">photos by <a href="https://unsplash.com/photos/nbqlWhOVu6k">David Moum</a> <a href="https://unsplash.com/photos/WqyO8Kgwd9Q">Wes Hileman</a> <a href="https://unsplash.com/photos/ynwGXMkpYcY">Jarosław Kwoczała</a> on <a href="https://unsplash.com/">Unsplash</a>
+</footer>
 </body>
 </html>
