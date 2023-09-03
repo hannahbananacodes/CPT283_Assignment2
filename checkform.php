@@ -15,68 +15,67 @@
 extract($_POST);
 
 // declare variables
-
-// child name
+// declare and assign variable for child name
 if (!empty($_POST['childName'])) 
 {
     $childName = $_POST['childName'];
 } 
-else 
+else // if nothing entered, assign null and print error message
 {
     $childName = NULL;
     echo '<p class="error">You forgot to enter your name!</p>';
 }
 
-// parent name
+// declare and assign variable for parent/guardian name
 if (!empty($_POST['parentName'])) 
 {
     $parentName = $_POST['parentName'];
 } 
-else 
+else  // if nothing entered, assign null and print error message
 {
     $parentName = NULL;
     echo '<p class="error">You forgot to enter your parent or guardian\'s name!</p>';
 }
 
-// email
+// declare and assign variable for parent/guardian email
 if (!empty($_POST['email'])) 
 {
     $email = $_POST['email'];
 } 
-else 
+else  // if nothing entered, assign null and print error message
 {
     $email = NULL;
     echo '<p class="error">You forgot to enter your parent or guardian\'s email address!</p>';
 }
 
-// phone
+// declare and assign variable for parent/guardian phone
 if (!empty($_POST['phone'])) 
 {
     $phone = $_POST['phone'];
 } 
-else 
+else  // if nothing entered, assign null and print error message
 {
     $phone = NULL;
     echo '<p class="error">You forgot to enter your parent or guardian\'s phone number!</p>';
 }
 
-// membership status
+// declare and assign variable for membership status
 if (!empty($_POST['membershipStatus'])) 
 {
     $membershipStatus = $_POST['membershipStatus'];
 } 
-else 
+else  // if nothing entered, assign null and print error message
 {
     $membershipStatus = NULL;
     echo '<p class="error">You forgot to enter your membership status!</p>';
 }
 
-// location (do i need this here ?)
+// declare and assign variable for location
 if (!empty($_POST['center'])) 
 {
     $center = $_POST['center'];
 } 
-else 
+else  // if nothing entered
 {
     $center = NULL;
 }
@@ -87,7 +86,7 @@ if ($childName == NULL || $parentName == NULL || $email == NULL || $phone == NUL
     echo '<p class="error">Weather Wizard, we need your name, your parent or guardian\'s name, and their email and phone number to sign you up.
         Hit the back button on the browser and try again.</p>';
 } 
-else 
+else // if all are NOT NULL, print confirmation message and proceed
 {
     echo "<p>Thank you for your submission, Weather Wizard! We will be in touch with your parent or guardian soon regarding workshop registration.</p>";
 
@@ -104,7 +103,7 @@ else
     {
         echo "<p>You are nearest to our Mt. Pleasant, SC location that has a historical and beachy vibe!";
     } 
-    else 
+    else // if dropdown left on default selection, print this message
     {
         echo "<p>Not sure of the closest location? We will send you an email to keep in touch!";
     }
@@ -118,7 +117,7 @@ else
     {
         echo "<p>Hi, $childName, we hope you'll join Weather Wizards. We have more fun than a jar full of lightning bugs!</p>";
     } 
-    else 
+    else // if "sign me up" option selected
     {
         echo "<p>Hi, $childName! Welcome to Weather Wizards, where the forecast is always a 99% chance of fun!</p>";
     }
@@ -128,11 +127,11 @@ else
     {
         echo "<p>You have chosen the following workshops.</p>";
         foreach ($workshop as $value)
-        {
+        { // print the name of each workshop selected on a new line
             echo "<p>$value</p>";
         }
     }
-    else 
+    else // if no checkboxes selected, print this message
     {
         echo "<p>You have not chosen a workshop, but we add new workshops all the time. We'll keep you updated by e-mail.</p>";
     }
